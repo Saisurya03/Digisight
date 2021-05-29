@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="loginedit.css">
+
+    </head>
+
+    <body>
+        <div class="user">
+            <header class="user__header">
+                <h1 class="user__title">Login</h1><br>
+            </header>
+
+            <div class="tab">
+                <button class="tablinks btns" onclick="openCity(event, 'admin')" id="defaultOpen">Admin</button>
+                <button class="tablinks btns" onclick="openCity(event, 'student')">Student</button>
+                <button class="tablinks btns" onclick="openCity(event, 'teacher')">Teacher</button>
+            </div>
+
+            <div id="admin" class="tabcontent">
+                <form class="form" action="login">
+                    <div class="form__group" >
+                        <input type="email" placeholder="Email" class="form__input" name="email" />
+                    </div>
+                    <div class="form__group">
+                        <input type="password" placeholder="Password" class="form__input" name="password" />
+                    </div>
+
+                    <input type="submit"  class="btn" value="Login">
+                </form>
+
+            </div>
+
+            <div id="student" class="tabcontent">
+                <form class="form" action="login1">
+                    <div class="form__group" >
+                        <input type="text" placeholder="Name" class="form__input" name="uname" />
+                        <input type="hidden" value ="student" name="ut">
+                    </div>
+                    <div class="form__group">
+                        <input type="password" placeholder="Password" class="form__input" name="password" />
+                    </div>
+
+                    <input type="submit"  class="btn" value="Login">
+                </form>
+            </div>
+
+            <div id="teacher" class="tabcontent">
+                <form class="form" action="login1">
+                    <div class="form__group" >
+                        <input type="text" placeholder="Name" class="form__input" name="uname" />
+                        <input type="hidden" name="ut" value="teacher">
+                    </div>
+                    <div class="form__group">
+                        <input type="password" placeholder="Password" class="form__input" name="password" />
+                    </div>
+
+                    <input type="submit"  class="btn" value="Login">
+                </form>
+            </div>
+        </div>
+        <script>
+            function openCity(evt, cityName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+// Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+    </body>
+</html>
+

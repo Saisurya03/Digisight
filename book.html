@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>	
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+		
+		<script src="new.js"></script>
+<title>Books</title>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #006666;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.grid-container {
+  display: grid;
+  position:relative;
+  grid-column-gap: 0px;
+  grid-template-columns: auto auto auto auto;
+  grid-row-gap: 10px;
+}
+
+.grid-item {
+  font-size: 30px;
+  text-align: center;
+}
+
+	.TFtable{
+		width:80%;
+    position: relative;
+    top: 30px;
+    margin-left: 30px; 
+		border-collapse:collapse; 
+	}
+	.TFtable td{ 
+		padding:7px; border:#4e95f4 1px solid;
+	}
+    .TFtable th{ 
+		padding:7px; border:#4e95f4 1px solid;
+        background: #006666;
+        color:white;
+	}
+	/* provide some minimal visual accomodation for IE8 and below */
+	.TFtable tr{
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the ODD background rows  */
+	.TFtable tr:nth-child(odd){ 
+		background: #b8d1f3;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+	.TFtable tr:nth-child(even){
+		background: #dae5f4;
+	}
+
+
+</style>
+</head>
+<body>
+
+
+<ul>
+  
+  <li><a href="index.html">Home</a></li>
+  <li><a href="graph.html">Grades</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Books</a>
+    <div class="dropdown-content">
+      <a href="Science.html">Science</a>
+      <a href="Maths.html">Maths</a>
+      <a href="SS.html">Social Studies</a>
+      <a href="Hindi.html">Hindi</a>
+      <a href="English.html">English</a>
+    </div>
+  </li>
+  <li><a href="Login.html" onclick=SignOut()>Logout</a></li>
+</ul>
+
+<h3 style="margin-left:10px;">Books</h3>
+
+<table class="TFtable" width="80%">
+    <tr><th colspan=2>Subject</th></tr>
+	<tr><td><a href="Science.html">Science</a></td><td>Download</td></tr>
+	<tr><td><a href="Maths.html">Maths</a></td><td>Download</td></tr>
+	<tr><td><a href="SS.html">Social Science</a></td><td>Download</td></tr>
+	<tr><td><a href="Hindi.html">Hindi</a></td><td>Download</td></tr>
+    <tr><td><a href="English.html">English</a></td><td>Download</td></tr>
+</table>
+
+</body>
+</html>
